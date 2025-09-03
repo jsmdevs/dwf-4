@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+* {
+    font-family: "Odibee Sans", sans-serif;
+}
+
+#root {
+    height: 100dvh;
+}
+
+.welcome-container {
+    display: block;
+    height: 100dvh;
+}
+
+.btn {
+    background-color: #006CFC;
+    border: solid 8px #001997;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 284px;
+    color: white;
+    font-family: "Odibee Sans", sans-serif;
+    font-size: 32px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #004aacff;
+    border: solid 8px #001061ff;
+}
