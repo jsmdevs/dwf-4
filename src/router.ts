@@ -1,37 +1,43 @@
+import { initWelcome } from "./pages/welcome";
+import { initInstructions } from "./pages/instructions";
+import { initGameplay } from "./pages/play";
+
 export function initRouter(container: HTMLElement) {
 
-    function goTo(path) {
-        history.pushState({}, "", path);
-        handleRoute(`/${path}`);
-    };
-
+    
+    
     function handleRoute(route: any) {
         const routes = [
             {
-                path: /\/instructions/,
-                component: (any) => any
+                path: /\/|welcome/,
+                component: initWelcome
             },
             {
-                path: /\/gameplay/,
-                component: (any) => any
+                path: /\/instructions/,
+                component: initInstructions
+            },
+            {
+                path: /\/play/,
+                component: initGameplay
             },
         ];
-
+        
+        function goTo(path) {
+            history.pushState({}, "", path);
+            handleRoute(`/${path}`);
+        };
 
         for (const r of routes) {
             if (r.path.test(route)) {
                 const el = r.component({ goTo: goTo });
-                if(container.firstChild){
+                if (container.firstChild) {
                     container.firstChild.remove();
-                }
+                };
                 container.appendChild(el);
             };
         };
     };
+
     handleRoute(location.pathname);
-    container.innerHTML = `
-        <welcome-component></welcome-component>
-    `
-
-
 };
+
