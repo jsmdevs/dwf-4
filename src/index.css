@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@import url("./pages/play/play.css");
+@import url("./pages/instructions/instructions.css");
+@import url("./pages/welcome/welcome.css");
+@import url("./pages/results/results.css");
+
 * {
     font-family: "Odibee Sans", sans-serif;
 }
 
 #root {
     height: 100dvh;
-}
-
-.welcome-container {
-    display: block;
-    height: 100dvh;
+    background-image: url('./assets/img/manos.svg');
+    background-size: 100px;
 }
 
 .btn {
@@ -30,67 +32,4 @@
 .btn:active {
     background-color: #004aacff;
     border: solid 8px #001061ff;
-}
-
-.welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    height: 100dvh;
-}
-
-.welcome__img {
-    width: 100%;
-    max-width: 284px;
-}
-
-.btn {
-    background-color: #006CFC;
-    border: solid 8px #001997;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 284px;
-    color: white;
-    font-family: "Odibee Sans", sans-serif;
-    font-size: 32px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.btn:active {
-    background-color: #004aacff;
-    border: solid 8px #001061ff;
-}
-
-.instructions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    height: 100%;
-}
-
-.instructions__text {
-    text-align: center;
-    font-size: 32px;
-    width: 100%;
-    max-width: 284px;
-    font-family: "Courier Prime", monospace;
-    font-weight: 600;
-}
-.countdown__number{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100dvh;
-}
-
-
-.countdown__number{
-    font-size: 64px;
-    font-weight: 600;
-    font-family: "Courier Prime", monospace;
 }

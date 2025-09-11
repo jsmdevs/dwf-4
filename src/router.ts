@@ -1,11 +1,10 @@
-import { initWelcome } from "./pages/welcome";
-import { initInstructions } from "./pages/instructions";
-import { initGameplay } from "./pages/play";
+import { initWelcome } from "./pages/welcome/welcome";
+import { initInstructions } from "./pages/instructions/instructions";
+import { initGameplay } from "./pages/play/play";
+import { initGame } from "./pages/results/results";
 
 export function initRouter(container: HTMLElement) {
 
-    
-    
     function handleRoute(route: any) {
         const routes = [
             {
@@ -20,6 +19,10 @@ export function initRouter(container: HTMLElement) {
                 path: /\/play/,
                 component: initGameplay
             },
+            {
+                path: /\/results/,
+                component: initGame
+            }
         ];
         
         function goTo(path) {

@@ -12,37 +12,49 @@ export const state = {
             computerPlay: "",
             personPlay: ""
         },
-        history: []
+        history: {
+            points: {
+                computer: 0,
+                person: 0
+            },
+            games: []
+        }
     },
+
+    // Devuelve los datos del state
 
     getState() {
         return this.data;
     },
 
-    setMove(game: Jugada) {
-        const currentState = this.getState();
-        currentState.currentGame.myPlay;
-    },
+    // Guarda la opción seleccionada
 
     setGame(option) {
 
         const moves = {
             1: "piedra",
             2: "papel",
-            3:"tijera"
+            3: "tijera"
         };
 
-        let computerOption = random(1,3);
+        let computerOption = random(1, 3);
 
         this.data.currentGame.personPlay = option;
         this.data.currentGame.computerPlay = moves[computerOption];
     },
 
+    // Guarda en el historial los datos
 
     pushToHistoty(play: Game) {
-        const currentState = this.getState();
-        currentState.history(play);
+
+        this.data.history.games.push({ ...play });
+        
+        if(play.computerPlay !== play.personPlay){
+            this.whoWins(play.personPlay, play.computerPlay) ? this.data.history.points.person += 1 : this.data.history.points.computer += 1; 
+        };
     },
+
+    // Procesa el ganador
 
     whoWins(myPlay: Jugada, computerPlay: Jugada) {
 
@@ -50,7 +62,6 @@ export const state = {
         const ganeConPiedra = myPlay == "piedra" && computerPlay == "tijera";
         const ganeConPapel = myPlay == "papel" && computerPlay == "piedra";
         const gane = [ganeConPapel, ganeConPiedra, ganeConTijeras].includes(true);
-
         return gane;
     }
 };

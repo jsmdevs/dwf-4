@@ -8,10 +8,17 @@ export function manos() {
         };
 
         render() {
-            // Importar imágenes
+            
+            // Importa imágenes
+
+            const imgPiedra = require("url:../assets/img/piedra.svg");
+            const imgPapel = require("url:../assets/img/papel.svg");
+            const imgTijera = require("url:../assets/img/tijera.svg");
+
+            // Cambia la opción seleccionada
 
             function handleOption(optionSelected: Element, optionsGame: NodeListOf<Element>) {
-                
+
                 optionsGame.forEach((option) => {
                     option.classList.add("unselected");
                     if (option.classList[1] && option.classList[1] == "selected") {
@@ -24,10 +31,6 @@ export function manos() {
                     };
                 });
             };
-
-            const imgPiedra = require("url:../assets/img/piedra.svg");
-            const imgPapel = require("url:../assets/img/papel.svg");
-            const imgTijera = require("url:../assets/img/tijera.svg");
 
             const shadow = this.attachShadow({ mode: "open" });
             const div = document.createElement("div");
@@ -79,9 +82,9 @@ export function manos() {
 
             div.classList.add("manos__container");
             div.innerHTML = `
-            <img id="tijera" class="btn-game" src=${imgTijera} alt="">
-               <img id="piedra" class="btn-game" src=${imgPiedra} alt="">
-               <img id="papel" class="btn-game" src=${imgPapel} alt="">
+                <img id="tijera" class="btn-game" src=${imgTijera} alt="">
+                <img id="piedra" class="btn-game" src=${imgPiedra} alt="">
+                <img id="papel" class="btn-game" src=${imgPapel} alt="">
             `;
 
             const optionsGame = div.querySelectorAll(".btn-game");
@@ -91,7 +94,6 @@ export function manos() {
                     handleOption(item, optionsGame);
                     state.setGame(item.id);
                 });
-
             });
 
             shadow.appendChild(div);
