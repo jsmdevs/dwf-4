@@ -1,6 +1,6 @@
-:root{
+:root {
     --color-loser: rgb(137 73 73 / 90%);
-    --color-empate : rgb(177 180 77 / 90%);
+    --color-empate: rgb(177 180 77 / 90%);
     --color-win: rgb(98 137 73 / 90%);
 }
 
@@ -8,10 +8,10 @@
     top: -15px;
     position: absolute;
     height: 400px;
-    left: 25%;
+    left: 45%;
     transform: translateX(-50%);
     transform: rotate(180deg);
-    
+
 }
 
 .option-you {
@@ -22,7 +22,7 @@
     transform: translateX(-50%);
 }
 
-.results{
+.results {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,19 +39,19 @@
     transition: all 1s;
 }
 
-.bg-empate{
+.bg-empate {
     background: var(--color-empate);
 }
 
-.bg-win{
+.bg-win {
     background: var(--color-win);
 }
 
-.bg-loser{
+.bg-loser {
     background: var(--color-loser);
 }
 
-.score{
+.score {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -62,16 +62,21 @@
     box-sizing: border-box;
 }
 
-.score__title{
+.score__title {
     text-align: center;
 }
 
 .score__person-title,
-.score__computer-title{
+.score__computer-title {
     text-align: end;
 }
 
-.show{
+.show {
     opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+    .option-computer {
+        left: 30%;
+    }
+}

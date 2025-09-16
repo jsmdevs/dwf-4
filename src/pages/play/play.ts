@@ -20,15 +20,18 @@ export function initGameplay(params) {
     
     let counter = 1;
     const intervaloId = setInterval(() => {
+        
         counter++;
         const item = div.querySelector(".loader__number");
         item.textContent = `${counter}`;
+
         if (counter > 3) {
             clearInterval(intervaloId);
             params.goTo("results");
             const currentGame = state.getState().currentGame;
             state.pushToHistoty(currentGame);
         };
+
     }, 1000);
 
     return div;
