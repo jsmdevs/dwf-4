@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel",
     "build": "parcel build ./src/index.html --dist-dir build --public-url /dwf-4",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
