@@ -1,0 +1,1 @@
+{"mappings":"AAAA,SAAS;IACL,MAAM,cAAc,SAAS,cAAc,CAAC;AAGhD;AAEA","sources":["src/index.ts"],"sourcesContent":["function main(){\r\n    const rootElement = document.getElementById('root');\r\n\r\n    \r\n};\r\n\r\nmain();"],"names":[],"version":3,"file":"piedra-papel-tijeras.377278e2.js.map","sourceRoot":"/__parcel_source_root/"}
