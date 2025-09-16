@@ -5,7 +5,8 @@
   "source": "index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build"
+    "build": "parcel build ./src/index.html --dist-dir build --public-url /dwf-4",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
@@ -16,6 +17,7 @@
     "util": "^0.12.5"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "lodash": "^4.17.21"
   }
 }
